@@ -3,5 +3,12 @@
     {
       "mode": "auto"
     }
-  ]
+  ],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.rulers": [100],
+  "editor.tabSize": 2,
+  "cSpell.words": ["fastify"]
 }

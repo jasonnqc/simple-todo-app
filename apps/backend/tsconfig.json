@@ -1,0 +1,10 @@
+{
+  "extends": ["@repo/tsconfig/base.json"],
+  "compilerOptions": {
+    "outDir": "./build",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
