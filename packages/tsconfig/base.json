@@ -12,7 +12,9 @@
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext"
   },
   "exclude": ["node_modules", "build", "dist"]
 }

@@ -1,13 +1,15 @@
 import Fastify from 'fastify';
-// import type { Todo } from '@/routes/todo';
+import usersRoute from '@/routes/users';
 
 const fastify = Fastify({
-  logger: true,
+  logger: false,
 });
 
-fastify.get('/', function handler() {
+fastify.get('/', () => {
   return { hello: 'world 2' };
 });
+
+void fastify.register(usersRoute, { prefix: '/users' });
 
 fastify.listen({ port: 4001 }, (err) => {
   if (err) {

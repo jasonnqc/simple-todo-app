@@ -34,9 +34,15 @@ module.exports = {
   },
   ignorePatterns: ['node_modules/', 'build/', '.eslintrc.js', '.eslintrc.cjs'],
   rules: {
+    'no-console': 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'import/no-cycle': 'off',
     'import/no-default-export': 'off',
     'import/no-named-as-default': 'off',
     'import/no-named-as-default-member': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-unsafe-return': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
   },
 };

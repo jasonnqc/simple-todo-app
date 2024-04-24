@@ -12,9 +12,10 @@ const project = resolve(process.cwd(), 'tsconfig.json');
  */
 
 module.exports = {
-  extends: ['@vercel/style-guide/eslint/browser', '@vue/eslint-config-typescript'].map(
-    require.resolve,
-  ),
+  extends: [
+    './library.js',
+    ...['@vercel/style-guide/eslint/browser', '@vue/eslint-config-typescript'].map(require.resolve),
+  ],
   parserOptions: {
     ecmaVersion: 'latest',
   },
@@ -27,14 +28,6 @@ module.exports = {
   },
   ignorePatterns: ['node_modules/', 'dist/', '.eslintrc.js', '.eslintrc.cjs'],
   rules: {
-    'no-console': 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    // 'prettier/prettier': 'error',
-    'import/no-cycle': 'off',
-    'import/no-default-export': 'off',
-    'import/no-named-as-default': 'off',
-    'import/no-named-as-default-member': 'off',
-    '@typescript-eslint/no-unused-vars': 'warn',
     'unicorn/filename-case': [
       'error',
       {
